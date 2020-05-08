@@ -1,0 +1,19 @@
+body {
+  background-color: whitesmoke;
+}
+
+h1 {
+  margin-left: 40%;
+  color: brown;
+}
+
+h2 {
+  color: rgb(136, 48, 48);
+}
+.container {
+  margin-left: 20%;
+}
+
+#submit {
+  margin-left: 40%;
+}
