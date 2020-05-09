@@ -3,11 +3,9 @@ var connection = require("../config/connection.js");
 
 function printQuestionMarks(num) {
   var arr = [];
-
   for (var i = 0; i < num; i++) {
     arr.push("?");
   }
-
   return arr.toString();
 }
 
@@ -39,7 +37,6 @@ var orm = {
     });
   },
   insertOne: function (table, cols, vals, cb) {
-    console.log("Inside insert one ORM");
     var queryString = "INSERT INTO " + table;
 
     queryString += " (";
@@ -48,8 +45,6 @@ var orm = {
     queryString += "VALUES (";
     queryString += printQuestionMarks(vals.length);
     queryString += ") ";
-
-    console.log(queryString);
 
     connection.query(queryString, vals, function (err, result) {
       if (err) {
@@ -67,7 +62,6 @@ var orm = {
     queryString += " WHERE ";
     queryString += condition;
 
-    console.log(queryString);
     connection.query(queryString, function (err, result) {
       if (err) {
         throw err;
